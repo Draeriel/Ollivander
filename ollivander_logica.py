@@ -59,4 +59,20 @@ class Conjured(NormalItem):
 			self.setQuality(-2)
 		else:
 			self.setQuality(-4)	
-		self.setSellIn()		
+		self.setSellIn()
+
+class Backstage(NormalItem):
+	def __init__(self, name, sell_in, quality):
+		Item.__init__(self, name, sell_in, quality)	
+
+	def updateQuality(self):
+		self.setSellIn()
+		if self.sell_in >= 0:
+			if self.sell_in < 5:
+				self.setQuality(3)
+			elif self.sell_in < 10:
+				self.setQuality(2)
+			else: 		
+				self.setQuality(1)
+		else:
+			self.quality = 0			
