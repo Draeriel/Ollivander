@@ -75,4 +75,12 @@ class Backstage(NormalItem):
 			else: 		
 				self.setQuality(1)
 		else:
-			self.quality = 0			
+			self.quality = 0	
+
+class Sulfuras(NormalItem):
+	def __init__(self, name, sell_in, quality):
+		Item.__init__(self, name, sell_in, quality)
+
+	def updateQuality(self):
+		self.getQuality()
+
